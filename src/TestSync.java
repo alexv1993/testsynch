@@ -5,10 +5,10 @@ public class TestSync implements Runnable {
     private int balance;
 
 
-    public void run() {
+    public synchronized void  run() {
         for (int i = 0; i < 50; i++) {
             increment();
-            System.out.println("Balance equals " + balance);
+            System.out.println( Thread.currentThread().getName() + " Balance equals " + balance );
         }
     }
 
